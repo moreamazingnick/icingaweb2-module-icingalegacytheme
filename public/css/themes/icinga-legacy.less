@@ -1,0 +1,186 @@
+// base.less
+@gray: #7F7F7F;
+@gray-semilight: lighten(@gray, 16.4706);
+@gray-light: lighten(@gray, 29.0196);
+@gray-lighter: lighten(@gray, 43.5294);
+@gray-lightest: lighten(@gray, 47.0588);
+@icinga-blue: #0095BF;
+@icinga-blue-dark: darken(@icinga-blue,3);
+@low-sat-blue: fadeout(@icinga-blue,90);
+@low-sat-blue-dark: fadeout(@icinga-blue-dark,90);
+@body-bg-color: #fff;
+@text-color: @black;
+@text-color-light: @gray;
+@tr-active-color: lighten(fadeout(@icinga-blue,80),10);
+@tr-hover-color: lighten(fadeout(@icinga-blue,80),30);
+@menu-bg-color: #494949;
+@menu-active-bg-color: darken(@menu-bg-color, 8.6275);
+@menu-color: @text-color-inverted;
+@menu-hover-bg-color: mix(#000, @menu-bg-color, 20);
+@menu-search-hover-bg-color: mix(#000, @menu-bg-color, 20);
+@menu-active-hover-bg-color: mix(#000, @menu-active-bg-color, 20);
+@menu-2ndlvl-highlight-bg-color: @tr-active-color;
+@tab-hover-bg-color: rgba(0,0,0,.1);
+
+.icon-proxmox:before {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD6SURBVChTZZAxT4NAFIC5m9gYdKGpThLSrYNxw/4BIbGTSX9C7b/hN5g4tE2oGxvdqoluBNBFkw6kEwMj5/duLcnjfbz33bvjlMNTVdVEa/1ljNl3XZf4vu/0fZ/xHRHTMAxLVdd1jntN4R15Qd4qZdc/DsPwAt/CvyLGwIbCCelATsRC2sF3xAX1uV3aNM2SlFL4pnGUGjyCb1iwYuvUivIwuaARyXYcwVBaEEUQBDPpa3nJRJHAH6Qx+UqYuKf3THYUkLDNGvHEtA/EB2nAb7D8yKU9I2IOyIRP5Cd4Cxt4Dr/CU/jv7B5d143btlWe52W05MzcY1j+A4lDjMaNNYnVAAAAAElFTkSuQmCC);
+}
+
+.container {
+  &:before,
+  > .content:before {
+    background-image:  ~"url(../img/icinga-loader-light.gif)";
+  }
+}
+
+// badges.less
+.badge {
+  background-color: @gray-light;
+}
+
+// controls.less
+.controls input.search,
+input.search {
+  background-image:  ~"url(../img/icons/search.png)";
+}
+
+// layout-structure.less
+
+#sidebar:after {
+  display: none;
+}
+
+// layout.less
+#header-logo-container {
+  background: @icinga-blue;
+}
+
+// login.less
+#login {
+  color: @white;
+  background-image: ~"url(../img/icingalegacytheme/icingaweb2-background.jpg)";
+  background-color: @icinga-blue;
+  input[type=text],
+  input[type=password],
+  .toggle-slider {
+    border-color: #404d72;
+    background-color: #404d72;
+
+    &:before {
+      border-color: #282e39;
+      background-color: #282E39;
+    }
+  }
+  input[type=submit] {
+    display: inline; // Chrome fix for entering login text
+    background: @icinga-blue-light;
+  }
+
+
+  input[type=submit]:hover {
+    background: @icinga-blue;
+  }
+
+  input[type="checkbox"]:checked + .toggle-switch .toggle-slider {
+    border-color: #00C3ED;
+    background-color: #00C3ED;
+  }
+}
+
+// menu.less
+#menu .nav-level-1 > .nav-item {
+  &.active {
+    color: @menu-color;
+  }
+
+  &:not(.selected) > a:hover,
+  &:not(.selected) > a:focus {
+    background-color: mix(#000, @menu-bg-color, 20);
+  }
+}
+
+#menu .nav-level-2 > .nav-item {
+  &.active > a {
+    color: @menu-color;
+  }
+}
+
+#layout:not(.sidebar-collapsed) #menu .nav-level-1 > .nav-item.active .nav-level-2 > li {
+  &.nav-item:not(.badge-nav-item) {
+    &:not(.selected):not(.active) a:hover,
+    &:not(.selected):not(.active) a:focus {
+      background-color: darken(@menu-bg-color, 20);
+      color: @menu-2ndlvl-highlight-color;
+    }
+  }
+
+  &.badge-nav-item:not(.selected) {
+    a:hover,
+    a:focus {
+      &:first-of-type,
+      &:first-of-type ~ a {
+        color: white;
+        background-color: darken(@menu-bg-color, 20);
+      }
+    }
+  }
+}
+
+// Hovered menu
+#layout:not(.minimal-layout).sidebar-collapsed #menu .nav-level-1 > .nav-item.hover,
+#layout:not(.minimal-layout) #menu .nav-level-1 > .nav-item:not(.active).hover {
+  > .nav-level-2 {
+    > .nav-item {
+      &:not(.active) {
+        a:hover, a:focus {
+          &:first-of-type,
+          &:first-of-type ~ a {
+            background-color: @tr-active-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// tabs.less
+.tabs {
+  background-color: @icinga-blue;
+
+  > li > a {
+    color: @body-bg-color;
+  }
+}
+
+// ipl-web
+@default-bg: @body-bg-color;
+
+@base-gray: @gray;
+@base-gray-light: @gray-light;
+@base-gray-lighter: @gray-lighter;
+@base-disabled: @disabled-gray;
+@base-primary-color: @icinga-blue;
+@base-primary-bg: @icinga-blue;
+
+@default-text-color: @text-color;
+@default-text-color-light: @text-color-light;
+@default-text-color-inverted: @text-color-inverted;
+
+@searchbar-bg: @low-sat-blue;
+
+@select-icon: escape('<svg width="253px" height="313px" viewBox="0 0 253 313" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="select-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M130.590338,127.704317 L181.781053,180.520134 C183.70293,182.503023 183.65347,185.668461 181.670581,187.590338 C180.737787,188.494431 179.489748,189 178.190714,189 L75.8092858,189 C73.0478621,189 70.8092858,186.761424 70.8092858,184 C70.8092858,182.700967 71.3148548,181.452928 72.2189475,180.520134 L123.409662,127.704317 C125.331539,125.721428 128.496977,125.671968 130.479866,127.593845 C130.517264,127.630092 130.554092,127.66692 130.590338,127.704317 Z" id="triangle" fill="@{icinga-blue}" transform="translate(127.000000, 156.500000) scale(1, -1) translate(-127.000000, -156.500000) "></path></g></svg>');
+
+
+.icinga-controls select:not([multiple]) {
+background-image: ~"url(data:image/svg+xml;utf8,@{select-icon})";
+
+  }
+#about .icinga-logo {
+  filter: brightness(0.415) sepia(1) ~"saturate(0.1)" hue-rotate(144deg);
+}
+#layout:not(.sidebar-collapsed) #menu .config-menu .user-nav-item > a {
+  color: @menu-color;    
+}
+#menu .config-menu > ul .config-nav-item > button .icon {
+  color: @menu-color;
+}
