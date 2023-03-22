@@ -26,7 +26,7 @@ Install these theme repository like any other Icinga Web 2 theme:
 wget https://github.com/moreamazingnick/icingaweb2-module-icingalegacytheme/archive/refs/tags/v1.0.0.zip
 unzip v1.0.0.zip -d /usr/share/icingaweb2/modules
 mv /usr/share/icingaweb2/modules/icingaweb2-module-icingalegacytheme-1.0.0 /usr/share/icingaweb2/modules/icingalegacytheme
-chmod -r 755 /usr/share/icingaweb2/modules/icingalegacytheme
+chmod -R 755 /usr/share/icingaweb2/modules/icingalegacytheme
 chown -R root:root /usr/share/icingaweb2/modules/icingalegacytheme
 icingacli module enable icingalegacytheme
 ```
