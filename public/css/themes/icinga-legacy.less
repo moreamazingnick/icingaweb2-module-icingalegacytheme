@@ -6,7 +6,7 @@
 @gray-lightest: lighten(@gray, 47.0588);
 @icinga-blue: #0095BF;
 @icinga-blue-dark: darken(@icinga-blue,3);
-@low-sat-blue: fadeout(@icinga-blue,90);
+@low-sat-blue: lighten(mix(@gray-lightest,@icinga-blue), 25);
 @low-sat-blue-dark: fadeout(@icinga-blue-dark,90);
 @body-bg-color: #fff;
 @text-color: @black;
@@ -21,10 +21,6 @@
 @menu-active-hover-bg-color: mix(#000, @menu-active-bg-color, 20);
 @menu-2ndlvl-highlight-bg-color: @tr-active-color;
 @tab-hover-bg-color: rgba(0,0,0,.1);
-
-.icon-proxmox:before {
-  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD6SURBVChTZZAxT4NAFIC5m9gYdKGpThLSrYNxw/4BIbGTSX9C7b/hN5g4tE2oGxvdqoluBNBFkw6kEwMj5/duLcnjfbz33bvjlMNTVdVEa/1ljNl3XZf4vu/0fZ/xHRHTMAxLVdd1jntN4R15Qd4qZdc/DsPwAt/CvyLGwIbCCelATsRC2sF3xAX1uV3aNM2SlFL4pnGUGjyCb1iwYuvUivIwuaARyXYcwVBaEEUQBDPpa3nJRJHAH6Qx+UqYuKf3THYUkLDNGvHEtA/EB2nAb7D8yKU9I2IOyIRP5Cd4Cxt4Dr/CU/jv7B5d143btlWe52W05MzcY1j+A4lDjMaNNYnVAAAAAElFTkSuQmCC);
-}
 
 .container {
   &:before,
@@ -82,8 +78,8 @@ input.search {
   }
 
   input[type="checkbox"]:checked + .toggle-switch .toggle-slider {
-    border-color: #00C3ED;
-    background-color: #00C3ED;
+    border-color: @icinga-blue-dark;
+    background-color: @icinga-blue;
   }
 }
 
