@@ -21,8 +21,6 @@ COPYING file included in the source package.
 ## Installation
 
 Install these theme repository like any other Icinga Web 2 theme:
-
-* copy all folders/files to your icingaweb2 folder (mostly /usr/share/icingaweb2)
     
 ```bash
 wget https://github.com/moreamazingnick/icingaweb2-module-icingalegacytheme/archive/refs/tags/v1.0.0.zip
