@@ -3,9 +3,7 @@
 1. [About](#about)
 2. [License](#license)
 3. [Installation](#installation)
-4. [Documentation](#documentation)
-5. [Support](#support)
-6. [Contributing](#contributing)
+4. [Contributing](#contributing)
 
 ## About
 
