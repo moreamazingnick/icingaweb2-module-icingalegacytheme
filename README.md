@@ -32,7 +32,7 @@ unzip v1.0.0.zip -d /usr/share/icingaweb2/modules
 mv /usr/share/icingaweb2/modules/icingaweb2-module-icingalegacytheme /usr/share/icingaweb2/modules/icingalegacytheme
 chmod -r 755 /usr/share/icingaweb2/modules/icingalegacytheme
 chown -R root:root /usr/share/icingaweb2/modules/icingalegacytheme
-icingacli module icingalegacytheme
+icingacli module enable icingalegacytheme
 ```
 
 ## Contributing
