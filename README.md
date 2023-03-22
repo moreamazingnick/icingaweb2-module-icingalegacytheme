@@ -9,7 +9,7 @@
 
 **icingaweb2-module-icingalegacytheme** is drawn from the last release of the official icinga-legacy.less.
 * It is light mode only
-* It is optimized for fash color change
+* It is optimized for fast color change
 * There is a second theme referencing icinga-legacy named icinga-legacy-nosocial, which hides all social media buttons
 
 ## License
